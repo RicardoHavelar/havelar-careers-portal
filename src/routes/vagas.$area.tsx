@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, MapPin, Briefcase } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
-import { getArea, jobsByArea } from "@/lib/jobs";
+import { getArea, jobsByArea, type Job } from "@/lib/jobs";
 
 export const Route = createFileRoute("/vagas/$area")({
   loader: ({ params }) => {
@@ -65,7 +65,7 @@ function AreaPage() {
               .
             </div>
           ) : (
-            jobs.map((job) => (
+            jobs.map((job: Job) => (
               <Link
                 key={job.id}
                 to="/candidatar/$jobId"
