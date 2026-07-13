@@ -9,9 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as VagasAreaRouteImport } from './routes/vagas.$area'
+import { Route as CandidatarJobIdRouteImport } from './routes/candidatar.$jobId'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -22,35 +35,79 @@ const VagasAreaRoute = VagasAreaRouteImport.update({
   path: '/vagas/$area',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CandidatarJobIdRoute = CandidatarJobIdRouteImport.update({
+  id: '/candidatar/$jobId',
+  path: '/candidatar/$jobId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/candidatar/$jobId': typeof CandidatarJobIdRoute
   '/vagas/$area': typeof VagasAreaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/candidatar/$jobId': typeof CandidatarJobIdRoute
   '/vagas/$area': typeof VagasAreaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/candidatar/$jobId': typeof CandidatarJobIdRoute
   '/vagas/$area': typeof VagasAreaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vagas/$area'
+  fullPaths: '/' | '/auth' | '/admin' | '/candidatar/$jobId' | '/vagas/$area'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vagas/$area'
-  id: '__root__' | '/' | '/vagas/$area'
+  to: '/' | '/auth' | '/admin' | '/candidatar/$jobId' | '/vagas/$area'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/auth'
+    | '/_authenticated/admin'
+    | '/candidatar/$jobId'
+    | '/vagas/$area'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  CandidatarJobIdRoute: typeof CandidatarJobIdRoute
   VagasAreaRoute: typeof VagasAreaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -65,11 +122,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VagasAreaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/candidatar/$jobId': {
+      id: '/candidatar/$jobId'
+      path: '/candidatar/$jobId'
+      fullPath: '/candidatar/$jobId'
+      preLoaderRoute: typeof CandidatarJobIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
+  CandidatarJobIdRoute: CandidatarJobIdRoute,
   VagasAreaRoute: VagasAreaRoute,
 }
 export const routeTree = rootRouteImport
