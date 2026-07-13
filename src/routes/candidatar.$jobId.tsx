@@ -187,7 +187,7 @@ function ApplyPage() {
             <div>
               <h3 className="font-semibold">O que vais fazer</h3>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc pl-4">
-                {job.responsibilities.map((r) => (
+                {job.responsibilities.map((r: string) => (
                   <li key={r}>{r}</li>
                 ))}
               </ul>
@@ -195,7 +195,7 @@ function ApplyPage() {
             <div>
               <h3 className="font-semibold">O que procuramos</h3>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc pl-4">
-                {job.requirements.map((r) => (
+                {job.requirements.map((r: string) => (
                   <li key={r}>{r}</li>
                 ))}
               </ul>
