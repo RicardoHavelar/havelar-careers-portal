@@ -1,21 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import logoAsset from "@/assets/havelar-logo.png.asset.json";
 
 export function SiteHeader({ children }: { children?: ReactNode }) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-brand text-primary-foreground font-bold shadow-brand">
-            H
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-semibold tracking-tight">HAVELAR</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              Carreiras
-            </span>
-          </div>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logoAsset.url} alt="Havelar" className="h-7 w-auto" />
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.25em] text-muted-foreground border-l border-border/60 pl-3">
+            Carreiras
+          </span>
         </Link>
+
         <nav className="flex items-center gap-2 text-sm">
           <a
             href="https://www.havelar.com/home-pt/"
@@ -37,12 +34,7 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 mt-24">
       <div className="mx-auto max-w-7xl px-6 py-10 grid gap-6 md:grid-cols-3 text-sm text-muted-foreground">
         <div>
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-brand text-primary-foreground font-bold text-xs">
-              H
-            </div>
-            <span className="font-semibold text-foreground">HAVELAR</span>
-          </div>
+          <img src={logoAsset.url} alt="Havelar" className="h-6 w-auto" />
           <p className="mt-3 max-w-xs">
             Impressão 3D de habitação. Construímos o futuro, uma camada de betão de cada vez.
           </p>
