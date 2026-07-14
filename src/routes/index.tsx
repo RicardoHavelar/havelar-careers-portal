@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Layers, Rocket, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-havelar.jpg";
+import heroAsset from "@/assets/havelar-hero.png.asset.json";
 import { AREAS, JOBS } from "@/lib/jobs";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
@@ -38,9 +38,9 @@ function HomePage() {
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs uppercase tracking-widest text-primary">
               <Sparkles className="h-3 w-3" /> Feira de Emprego · {JOBS.length} vagas ativas
             </div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-              Constrói o <span className="text-gradient-brand">futuro da habitação</span>, camada
-              a camada.
+            <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl uppercase">
+              Building <span className="text-gradient-brand">Communities</span>,<br />
+              Building <span className="text-gradient-brand">Talent</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
               Na HAVELAR imprimimos casas em betão 3D. Estamos a recrutar em toda a operação —
@@ -85,11 +85,9 @@ function HomePage() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-brand opacity-20 blur-3xl rounded-3xl" aria-hidden />
             <img
-              src={heroImage}
-              width={1920}
-              height={1280}
-              alt="Braço robótico da HAVELAR a imprimir uma casa em betão 3D ao pôr do sol"
-              className="relative rounded-2xl border border-border/60 shadow-brand"
+              src={heroAsset.url}
+              alt="Impressora 3D de betão da HAVELAR a construir uma casa"
+              className="relative rounded-2xl border border-border/60 shadow-brand w-full h-auto"
             />
           </div>
         </div>
