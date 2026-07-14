@@ -31,14 +31,28 @@ function HomePage() {
       </SiteHeader>
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero" aria-hidden />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-20 pb-24 lg:grid-cols-2 lg:pt-28 lg:pb-32 lg:items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs uppercase tracking-widest text-primary">
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroAsset.url})` }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-hero opacity-70" aria-hidden />
+
+        <div className="relative mx-auto w-full max-w-7xl px-6 pt-24 pb-20 lg:pt-32 lg:pb-28">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs uppercase tracking-widest text-primary backdrop-blur">
               <Sparkles className="h-3 w-3" /> Feira de Emprego · {JOBS.length} vagas ativas
             </div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl uppercase">
+            <h1 className="mt-6 text-5xl font-bold leading-[1.02] tracking-tight sm:text-7xl uppercase">
               Building <span className="text-gradient-brand">Communities</span>,<br />
               Building <span className="text-gradient-brand">Talent</span>.
             </h1>
@@ -58,7 +72,7 @@ function HomePage() {
                 href="https://www.havelar.com/home-pt/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-border/60 px-5 py-3 text-sm font-medium hover:border-primary/60"
+                className="inline-flex items-center gap-2 rounded-lg border border-border/60 bg-background/40 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary/60"
               >
                 Conhecer a HAVELAR
               </a>
@@ -81,17 +95,9 @@ function HomePage() {
               </div>
             </dl>
           </div>
-
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-brand opacity-20 blur-3xl rounded-3xl" aria-hidden />
-            <img
-              src={heroAsset.url}
-              alt="Impressora 3D de betão da HAVELAR a construir uma casa"
-              className="relative rounded-2xl border border-border/60 shadow-brand w-full h-auto"
-            />
-          </div>
         </div>
       </section>
+
 
       {/* Formats */}
       <section className="mx-auto max-w-7xl px-6 py-12">
