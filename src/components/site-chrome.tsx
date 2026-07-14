@@ -34,12 +34,7 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 mt-24">
       <div className="mx-auto max-w-7xl px-6 py-10 grid gap-6 md:grid-cols-3 text-sm text-muted-foreground">
         <div>
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-brand text-primary-foreground font-bold text-xs">
-              H
-            </div>
-            <span className="font-semibold text-foreground">HAVELAR</span>
-          </div>
+          <img src={logoAsset.url} alt="Havelar" className="h-6 w-auto" />
           <p className="mt-3 max-w-xs">
             Impressão 3D de habitação. Construímos o futuro, uma camada de betão de cada vez.
           </p>
