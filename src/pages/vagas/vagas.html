@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas — Carreiras HAVELAR</title>
+  <meta name="description" content="Vagas ativas na HAVELAR. Candidata-te agora.">
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../../../index.html" class="header__brand">
+        <img src="../../assets/havelar-logo.png" alt="HAVELAR" class="header__logo">
+        <span class="header__tagline">Carreiras</span>
+      </a>
+      <nav class="header__nav">
+        <a href="https://www.havelar.com/home-pt/" target="_blank" rel="noopener noreferrer" class="header__link">Site principal ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container-narrow" style="padding-top: 3rem; padding-bottom: 5rem;">
+
+    <a id="back-link" href="../../../index.html#areas" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Todas as áreas
+    </a>
+
+    <div class="page-header reveal">
+      <div class="page-header__icon" id="area-icon">…</div>
+      <div>
+        <p class="page-header__eyebrow">Área</p>
+        <h1 class="page-header__title" id="area-title">Carregando…</h1>
+        <p class="page-header__desc" id="area-desc"></p>
+      </div>
+    </div>
+
+    <!-- Jobs populated dynamically -->
+    <div id="jobs-list" class="jobs-list reveal reveal-delay-1"></div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <img src="../../assets/havelar-logo.png" alt="HAVELAR" class="footer__logo">
+        <p>Impressão 3D de habitação. Construímos o futuro, uma camada de betão de cada vez.</p>
+      </div>
+      <div>
+        <p class="footer__heading">Recrutamento</p>
+        <p>Ricardo Lemos — Gestor de Recursos Humanos</p>
+        <a href="mailto:recrutamento@havelar.com" class="footer__email">recrutamento@havelar.com</a>
+      </div>
+      <div>
+        <p class="footer__heading">Links</p>
+        <div class="footer__links">
+          <a href="https://www.havelar.com/home-pt/" target="_blank" rel="noopener noreferrer">havelar.com ↗</a>
+          <a href="../../../index.html#areas">Ver vagas</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      &copy; <span id="footer-year"></span> HAVELAR. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="../../core/data.js"></script>
+  <script src="../../shared/main.js"></script>
+  <script src="vagas.js"></script>
+</body>
+</html>
