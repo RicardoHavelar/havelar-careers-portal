@@ -85,11 +85,9 @@ function HomePage() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-brand opacity-20 blur-3xl rounded-3xl" aria-hidden />
             <img
-              src={heroImage}
-              width={1920}
-              height={1280}
-              alt="Braço robótico da HAVELAR a imprimir uma casa em betão 3D ao pôr do sol"
-              className="relative rounded-2xl border border-border/60 shadow-brand"
+              src={heroAsset.url}
+              alt="Impressora 3D de betão da HAVELAR a construir uma casa"
+              className="relative rounded-2xl border border-border/60 shadow-brand w-full h-auto"
             />
           </div>
         </div>
