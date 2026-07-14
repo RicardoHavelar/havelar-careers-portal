@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Layers, Rocket, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-havelar.jpg";
+import heroAsset from "@/assets/havelar-hero.png.asset.json";
 import { AREAS, JOBS } from "@/lib/jobs";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 

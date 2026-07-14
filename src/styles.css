@@ -51,47 +51,47 @@
 :root {
   --radius: 0.75rem;
 
-  --background: oklch(0.14 0.012 40);
-  --foreground: oklch(0.97 0.01 80);
+  --background: oklch(0.16 0.005 160);
+  --foreground: oklch(0.97 0.01 140);
 
-  --card: oklch(0.18 0.014 45);
-  --card-foreground: oklch(0.97 0.01 80);
+  --card: oklch(0.20 0.008 160);
+  --card-foreground: oklch(0.97 0.01 140);
 
-  --popover: oklch(0.18 0.014 45);
-  --popover-foreground: oklch(0.97 0.01 80);
+  --popover: oklch(0.20 0.008 160);
+  --popover-foreground: oklch(0.97 0.01 140);
 
-  --primary: oklch(0.72 0.16 45);
-  --primary-foreground: oklch(0.14 0.012 40);
+  --primary: oklch(0.86 0.17 145);
+  --primary-foreground: oklch(0.16 0.01 160);
 
-  --secondary: oklch(0.24 0.02 50);
-  --secondary-foreground: oklch(0.97 0.01 80);
+  --secondary: oklch(0.26 0.01 160);
+  --secondary-foreground: oklch(0.97 0.01 140);
 
-  --muted: oklch(0.22 0.014 50);
-  --muted-foreground: oklch(0.72 0.02 70);
+  --muted: oklch(0.24 0.008 160);
+  --muted-foreground: oklch(0.74 0.02 150);
 
-  --accent: oklch(0.82 0.15 85);
-  --accent-foreground: oklch(0.14 0.012 40);
+  --accent: oklch(0.90 0.18 145);
+  --accent-foreground: oklch(0.16 0.01 160);
 
   --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.97 0.01 80);
+  --destructive-foreground: oklch(0.97 0.01 140);
 
-  --border: oklch(0.28 0.015 50);
-  --input: oklch(0.24 0.015 50);
-  --ring: oklch(0.72 0.16 45);
+  --border: oklch(0.30 0.01 160);
+  --input: oklch(0.26 0.01 160);
+  --ring: oklch(0.86 0.17 145);
 
-  --brand: oklch(0.72 0.16 45);
-  --brand-foreground: oklch(0.14 0.012 40);
+  --brand: oklch(0.86 0.17 145);
+  --brand-foreground: oklch(0.16 0.01 160);
 
   --hero-gradient: radial-gradient(
       ellipse 80% 60% at 70% 30%,
-      oklch(0.72 0.16 45 / 0.25),
+      oklch(0.86 0.17 145 / 0.22),
       transparent 60%
     ),
-    radial-gradient(ellipse 60% 50% at 20% 80%, oklch(0.82 0.15 85 / 0.12), transparent 60%),
-    linear-gradient(180deg, oklch(0.14 0.012 40), oklch(0.11 0.012 40));
+    radial-gradient(ellipse 60% 50% at 20% 80%, oklch(0.86 0.17 145 / 0.10), transparent 60%),
+    linear-gradient(180deg, oklch(0.16 0.005 160), oklch(0.12 0.005 160));
 
-  --brand-gradient: linear-gradient(135deg, oklch(0.72 0.16 45), oklch(0.82 0.15 85));
-  --glow-shadow: 0 20px 60px -20px oklch(0.72 0.16 45 / 0.4);
+  --brand-gradient: linear-gradient(135deg, oklch(0.86 0.17 145), oklch(0.92 0.16 140));
+  --glow-shadow: 0 20px 60px -20px oklch(0.86 0.17 145 / 0.45);
 }
 
 .dark {
@@ -111,10 +111,10 @@
     color: var(--color-foreground);
     background-image: radial-gradient(
         1200px 600px at 80% -10%,
-        oklch(0.72 0.16 45 / 0.08),
+        oklch(0.86 0.17 145 / 0.07),
         transparent 60%
       ),
-      radial-gradient(1000px 500px at -10% 20%, oklch(0.82 0.15 85 / 0.05), transparent 60%);
+      radial-gradient(1000px 500px at -10% 20%, oklch(0.86 0.17 145 / 0.04), transparent 60%);
     background-attachment: fixed;
   }
   h1,
