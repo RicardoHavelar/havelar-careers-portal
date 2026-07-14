@@ -38,9 +38,9 @@ function HomePage() {
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs uppercase tracking-widest text-primary">
               <Sparkles className="h-3 w-3" /> Feira de Emprego · {JOBS.length} vagas ativas
             </div>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-              Constrói o <span className="text-gradient-brand">futuro da habitação</span>, camada
-              a camada.
+            <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl uppercase">
+              Building <span className="text-gradient-brand">Communities</span>,<br />
+              Building <span className="text-gradient-brand">Talent</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
               Na HAVELAR imprimimos casas em betão 3D. Estamos a recrutar em toda a operação —
