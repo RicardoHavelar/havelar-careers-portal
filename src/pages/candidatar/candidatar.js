@@ -76,7 +76,9 @@ async function onSubmit(e) {
   try {
     // Construct the prefilled email body in Portuguese with form details
     const subject = `Candidatura: ${currentJob.title} - ${fullName}`;
-    const emailBody = `Olá Recrutamento HAVELAR,
+    const emailBody = `**[IMPORTANTE: POR FAVOR, ADICIONE O SEU CV EM ANEXO A ESTE E-MAIL]**
+
+Olá Recrutamento HAVELAR,
 
 Venho por este meio apresentar a minha candidatura à vaga de "${currentJob.title}" (${currentJob.type}).
 
