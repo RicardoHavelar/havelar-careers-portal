@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function renderStats(data) {
-  const totalJobs  = data.jobs.length;
   const totalAreas = data.areas.length;
 
   const setEl = (id, val) => {
@@ -22,7 +21,6 @@ function renderStats(data) {
     if (el) el.textContent = val;
   };
 
-  setEl('stat-jobs',  totalJobs);
   setEl('stat-areas', totalAreas);
 }
 
@@ -32,9 +30,6 @@ function renderAreasGrid(data) {
   grid.innerHTML = '';
 
   data.areas.forEach(area => {
-    const count = jobsByArea(data, area.id).length;
-    const label = count === 1 ? 'vaga' : 'vagas';
-
     const a = document.createElement('a');
     a.href = `src/pages/vagas/vagas.html?area=${area.id}`;
     a.className = 'card area-card';
@@ -43,7 +38,6 @@ function renderAreasGrid(data) {
       <h3 class="area-card__title">${area.name}</h3>
       <p class="area-card__desc">${area.description}</p>
       <div class="area-card__footer">
-        <span class="badge badge--primary">${count} ${label}</span>
         <span class="area-card__cta">
           Ver vagas
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

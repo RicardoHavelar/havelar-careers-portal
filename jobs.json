@@ -79,7 +79,7 @@
       "id": "eng-mec",
       "title": "Engenheiro(a) Mecânico(a)",
       "area": "engenharia-mecanica",
-      "types": ["Emprego", "Estágio de Verão"],
+      "types": ["Emprego", "Estágio Curricular", "Estágio de Verão"],
       "location": "Vila do Conde, Porto",
       "summary": "Desenvolve e mantém as nossas impressoras 3D industriais de grande escala, garantindo o seu funcionamento e evolução contínua.",
       "responsibilities": [
@@ -89,7 +89,7 @@
         "Documentação técnica"
       ],
       "requirements": [
-        "Licenciatura em Eng. Mecânica (ou Estudante para Estágio de Verão)",
+        "Licenciatura em Eng. Mecânica (ou Estudante para Estágios)",
         "Experiência em manutenção industrial",
         "Conhecimentos de hidráulica e pneumática",
         "Disponibilidade para 8 semanas entre Junho e Setembro (para Estágio de Verão)"
@@ -99,7 +99,7 @@
       "id": "eng-mat",
       "title": "Engenheiro(a) de Materiais",
       "area": "engenharia-materiais",
-      "types": ["Emprego", "Estágio de Verão"],
+      "types": ["Emprego", "Estágio Curricular", "Estágio de Verão"],
       "location": "Vila do Conde, Porto",
       "summary": "Desenvolve novas fórmulas de betão para impressão aditiva neutra em carbono.",
       "responsibilities": [
@@ -118,7 +118,7 @@
       "id": "eng-civil",
       "title": "Engenheiro(a) Civil",
       "area": "engenharia-civil",
-      "types": ["Emprego", "Estágio de Verão"],
+      "types": ["Emprego", "Estágio Curricular", "Estágio de Verão"],
       "location": "Vila do Conde, Porto",
       "summary": "Investiga e desenvolve soluções estruturais para habitações impressas em 3D.",
       "responsibilities": [
@@ -127,7 +127,7 @@
         "Garantia de qualidade e cumprimento de prazos"
       ],
       "requirements": [
-        "Licenciatura em Eng. Civil (ou Estudante para Estágio de Verão)",
+        "Licenciatura em Eng. Civil (ou Estudante para Estágios)",
         "Perfil analítico e orientado para I&D",
         "Conhecimentos BIM e inglês técnico",
         "Disponibilidade entre Junho e Setembro (para Estágio de Verão)"
@@ -155,7 +155,7 @@
       "id": "comercial",
       "title": "Gestor(a) Comercial",
       "area": "comercial",
-      "types": ["Emprego"],
+      "types": ["Emprego", "Estágio Curricular", "Estágio de Verão"],
       "location": "Vila do Conde, Porto / Remoto híbrido",
       "summary": "Procuramos alguém com formação em Arquitetura ou Engenharia que saiba vender um produto técnico e inovador.",
       "responsibilities": [
@@ -174,7 +174,7 @@
       "id": "eng-info",
       "title": "Engenheiro(a) Informático(a)",
       "area": "engenharia-informatica",
-      "types": ["Emprego"],
+      "types": ["Emprego", "Estágio Curricular", "Estágio de Verão"],
       "location": "Vila do Conde, Porto / Híbrido",
       "summary": "Cria o software que controla as máquinas e automatiza a produção.",
       "responsibilities": [
