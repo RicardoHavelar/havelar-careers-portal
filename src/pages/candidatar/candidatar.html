@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
   <link rel="icon" type="image/png" href="../../assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../../styles/main.css">
 </head>
+
 <body>
 
   <!-- Header -->
@@ -21,7 +24,8 @@
         <span class="header__tagline">Carreiras</span>
       </a>
       <nav class="header__nav">
-        <a href="https://www.havelar.com/home-pt/" target="_blank" rel="noopener noreferrer" class="header__link">Site principal ↗</a>
+        <a href="https://www.havelar.com/home-pt/" target="_blank" rel="noopener noreferrer" class="header__link">Site
+          principal ↗</a>
       </nav>
     </div>
   </header>
@@ -32,14 +36,18 @@
     <!-- Form View -->
     <div id="form-view">
       <a id="back-link" href="../../../index.html#areas" class="back-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12" />
+          <polyline points="12 19 5 12 12 5" />
+        </svg>
         <span data-area-name>Vagas</span>
       </a>
 
       <!-- Job Detail Card -->
       <div class="card reveal" style="margin-top: 1.5rem;">
         <div class="job-detail-card__meta">
-          <span class="badge badge--primary" id="job-type">…</span>
+          <div id="job-types-container" style="display: flex; gap: 0.5rem; flex-wrap: wrap;"></div>
           <span class="badge badge--subtle" id="job-location">…</span>
         </div>
         <h1 class="job-detail-card__title" id="job-title">Carregando…</h1>
@@ -105,14 +113,24 @@
             </select>
           </div>
 
+          <div class="form-group">
+            <label class="form-label" for="applied_type">Formato da vaga *</label>
+            <select class="form-control" id="applied_type" required>
+              <option value="">Seleciona…</option>
+            </select>
+            <span class="form-error hidden" id="err-applied_type"></span>
+          </div>
+
           <div class="form-group form-grid--full">
             <label class="form-label" for="education">Formação académica</label>
-            <input class="form-control" type="text" id="education" placeholder="Ex: Mestrado em Eng. Mecânica — Univ. do Minho">
+            <input class="form-control" type="text" id="education"
+              placeholder="Ex: Mestrado em Eng. Mecânica — Univ. do Minho">
           </div>
 
           <div class="form-group form-grid--full">
             <label class="form-label" for="cover_letter">Mensagem / carta de apresentação</label>
-            <textarea class="form-control" id="cover_letter" rows="5" maxlength="3000" placeholder="Fala-nos um pouco de ti e porque queres juntar-te à HAVELAR."></textarea>
+            <textarea class="form-control" id="cover_letter" rows="5" maxlength="3000"
+              placeholder="Fala-nos um pouco de ti e porque queres juntar-te à HAVELAR."></textarea>
           </div>
         </div>
 
@@ -125,12 +143,17 @@
     <!-- Success View -->
     <div id="success-view" class="success-card card reveal hidden">
       <div class="success-card__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
       </div>
       <h1 class="success-card__title">E-mail de candidatura preparado!</h1>
       <p class="success-card__desc" style="max-width: 520px; margin: 0.75rem auto 0; line-height: 1.6;">
         O seu cliente de e-mail foi aberto com todas as informações preenchidas.<br>
-        Por favor, certifique-se de <strong>anexar o seu currículo</strong> e clicar em <strong>Enviar</strong> no seu e-mail para concluir a candidatura a <strong id="success-job-title">…</strong>.
+        Por favor, certifique-se de <strong>anexar o seu currículo</strong> e clicar em <strong>Enviar</strong> no seu
+        e-mail para concluir a candidatura a <strong id="success-job-title">…</strong>.
       </p>
       <div class="success-card__actions">
         <a href="../../../index.html" class="btn btn--primary">Voltar ao início</a>
@@ -141,32 +164,11 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <img src="../../assets/havelar-logo.png" alt="HAVELAR" class="footer__logo">
-        <p>Impressão 3D de habitação. Construímos o futuro, uma camada de betão de cada vez.</p>
-      </div>
-      <div>
-        <p class="footer__heading">Recrutamento</p>
-        <p>Ricardo Lemos — Gestor de Recursos Humanos</p>
-        <a href="mailto:recrutamento@havelar.com" class="footer__email">recrutamento@havelar.com</a>
-      </div>
-      <div>
-        <p class="footer__heading">Links</p>
-        <div class="footer__links">
-          <a href="https://www.havelar.com/home-pt/" target="_blank" rel="noopener noreferrer">havelar.com ↗</a>
-          <a href="../../../index.html#areas">Ver vagas</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      &copy; <span id="footer-year"></span> HAVELAR. Todos os direitos reservados.
-    </div>
-  </footer>
+  <footer class="footer"></footer>
 
   <script src="../../core/data.js"></script>
   <script src="../../shared/main.js"></script>
   <script src="candidatar.js"></script>
 </body>
+
 </html>

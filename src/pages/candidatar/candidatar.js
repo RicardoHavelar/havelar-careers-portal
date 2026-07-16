@@ -35,10 +35,31 @@ function populateJobDetails(data, job) {
 
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
   set('job-title', job.title);
-  set('job-type', job.type);
   set('job-location', job.location);
   set('job-summary', job.summary);
   set('success-job-title', job.title);
+
+  const typesContainer = document.getElementById('job-types-container');
+  if (typesContainer) {
+    typesContainer.innerHTML = job.types.map(t => `
+      <span class="badge badge--primary">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="20" height="14" x="2" y="7" rx="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+        ${t}
+      </span>
+    `).join('');
+  }
+
+  const select = document.getElementById('applied_type');
+  if (select) {
+    select.innerHTML = '<option value="">Seleciona…</option>' + 
+      job.types.map(t => `<option value="${t}">${t}</option>`).join('');
+    if (job.types.length === 1) {
+      select.value = job.types[0];
+    }
+  }
 
   const resp = document.getElementById('job-responsibilities');
   if (resp) resp.innerHTML = job.responsibilities.map(r => `<li>${r}</li>`).join('');
@@ -59,6 +80,7 @@ async function onSubmit(e) {
   const linkedin = v('linkedin');
   const education = v('education');
   const experience = v('experience_years');
+  const appliedType = v('applied_type');
   const coverLetter = v('cover_letter');
 
   let ok = true;
@@ -66,6 +88,7 @@ async function onSubmit(e) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('email', 'Email inválido'); ok = false; }
   if (phone.length < 6 || phone.length > 30) { setErr('phone', 'Telefone inválido'); ok = false; }
   if (linkedin && !linkedin.startsWith('http')) { setErr('linkedin', 'URL inválido'); ok = false; }
+  if (!appliedType) { setErr('applied_type', 'Selecione o formato da vaga'); ok = false; }
 
   if (!ok) { showToast('Corrige os erros antes de enviar.', 'error'); return; }
 
@@ -80,7 +103,7 @@ async function onSubmit(e) {
 
 Olá Recrutamento HAVELAR,
 
-Venho por este meio apresentar a minha candidatura à vaga de "${currentJob.title}" (${currentJob.type}).
+Venho por este meio apresentar a minha candidatura à vaga de "${currentJob.title}" (${appliedType}).
 
 Informações de Candidatura:
 --------------------------------------------------

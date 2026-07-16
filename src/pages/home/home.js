@@ -24,7 +24,6 @@ function renderStats(data) {
 
   setEl('stat-jobs',  totalJobs);
   setEl('stat-areas', totalAreas);
-  setEl('hero-badge-count', totalJobs);
 }
 
 function renderAreasGrid(data) {

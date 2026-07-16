@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initReveal();
-  setFooterYear();
+  initFooter();
 });
 
 /* ── Header scrolled effect ──────────────────────────────────────────────── */
@@ -36,10 +36,39 @@ function initReveal() {
   els.forEach(el => io.observe(el));
 }
 
-/* ── Footer year ─────────────────────────────────────────────────────────── */
-function setFooterYear() {
-  const el = document.getElementById('footer-year');
-  if (el) el.textContent = new Date().getFullYear();
+/* ── Dynamic Footer Component ────────────────────────────────────────────── */
+function initFooter() {
+  const footer = document.querySelector('.footer');
+  if (!footer) return;
+  const isSubpage = window.location.pathname.includes('/src/pages/');
+  const logoSrc = isSubpage ? '../../assets/havelar-logo.png' : 'src/assets/havelar-logo.png';
+  const vagasHref = isSubpage ? '../../../index.html#areas' : '#areas';
+
+  footer.innerHTML = `
+    <div class="container footer__grid">
+      <div>
+        <img src="${logoSrc}" alt="HAVELAR" class="footer__logo">
+        <p>Impressão 3D de habitação. Construímos o futuro, construímos talento.</p>
+      </div>
+      <div>
+        <p class="footer__heading">Recrutamento</p>
+        <p>Ricardo Lemos — Gestor de Recursos Humanos</p>
+        <a href="mailto:recrutamento@havelar.com" class="footer__email">recrutamento@havelar.com</a>
+      </div>
+      <div>
+        <p class="footer__heading">Links</p>
+        <div class="footer__links">
+          <a href="${vagasHref}">Ver vagas</a>
+          <a href="https://www.linkedin.com/company/havelar/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://www.instagram.com/_havelar_" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://www.havelar.com/home-pt/" target="_blank" rel="noopener noreferrer">havelar.com ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      &copy; ${new Date().getFullYear()} HAVELAR. Todos os direitos reservados.
+    </div>
+  `;
 }
 
 /* ── Toast notifications (globally available) ───────────────────────────── */

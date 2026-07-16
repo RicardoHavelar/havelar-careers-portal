@@ -62,17 +62,16 @@ const STATIC_JOBS_DATA = {
   ],
   "jobTypes": [
     "Emprego",
-    "Estágio Profissional",
     "Estágio Curricular",
     "Estágio de Verão"
   ],
   "jobs": [
     {
-      "id": "op-3d-emprego",
+      "id": "op-3d",
       "title": "Operador(a) de Impressora 3D",
       "area": "impressao-3d",
-      "type": "Emprego",
-      "location": "Vila Nova de Famalicão",
+      "types": ["Emprego"],
+      "location": "Vila do Conde, Porto",
       "summary": "Opera as nossas impressoras 3D de betão em ambiente de produção e obra.",
       "responsibilities": [
         "Preparar e operar impressoras 3D de grande formato",
@@ -86,147 +85,66 @@ const STATIC_JOBS_DATA = {
       ]
     },
     {
-      "id": "eng-mec-emprego",
+      "id": "eng-mec",
       "title": "Engenheiro(a) Mecânico(a)",
       "area": "engenharia-mecanica",
-      "type": "Emprego",
-      "location": "Vila Nova de Famalicão",
+      "types": ["Emprego", "Estágio de Verão"],
+      "location": "Vila do Conde, Porto",
       "summary": "Integra a equipa de desenvolvimento das nossas impressoras industriais.",
       "responsibilities": [
         "Projeto mecânico de componentes das impressoras 3D",
         "Otimização de sistemas de extrusão",
-        "Acompanhamento de montagem e testes"
-      ],
-      "requirements": [
-        "Mestrado em Eng. Mecânica",
-        "Domínio de SolidWorks ou similar",
-        "1+ anos de experiência (valorizado)"
-      ]
-    },
-    {
-      "id": "eng-mec-estagio",
-      "title": "Estágio Profissional — Eng. Mecânica",
-      "area": "engenharia-mecanica",
-      "type": "Estágio Profissional",
-      "location": "Vila Nova de Famalicão",
-      "summary": "Estágio remunerado (IEFP) na equipa de I&D mecânico.",
-      "responsibilities": [
-        "Apoio ao projeto de novas máquinas",
-        "Testes e validação em bancada",
+        "Apoio ao projeto, montagem e testes de novas máquinas",
         "Documentação técnica"
       ],
       "requirements": [
-        "Recém-licenciado(a) ou mestre em Eng. Mecânica",
-        "Elegibilidade para estágio IEFP"
+        "Mestrado em Eng. Mecânica (ou Estudante do 3º/4º/5º ano para Estágio de Verão)",
+        "Domínio de SolidWorks ou similar",
+        "Disponibilidade para 8 semanas entre Junho e Setembro (para Estágio de Verão)"
       ]
     },
     {
-      "id": "eng-mec-verao",
-      "title": "Estágio de Verão — Eng. Mecânica",
-      "area": "engenharia-mecanica",
-      "type": "Estágio de Verão",
-      "location": "Vila Nova de Famalicão",
-      "summary": "8 semanas a construir o futuro da construção 3D.",
-      "responsibilities": [
-        "Participação em projeto real de I&D",
-        "Formação técnica interna",
-        "Contacto com produção e obra"
-      ],
-      "requirements": [
-        "Estudante do 3º/4º/5º ano de Eng. Mecânica",
-        "Disponibilidade para 8 semanas entre Junho e Setembro"
-      ]
-    },
-    {
-      "id": "eng-mat-emprego",
+      "id": "eng-mat",
       "title": "Engenheiro(a) de Materiais",
       "area": "engenharia-materiais",
-      "type": "Emprego",
-      "location": "Vila Nova de Famalicão",
-      "summary": "Lidera o desenvolvimento das nossas formulas de betão imprimível.",
+      "types": ["Emprego", "Estágio de Verão"],
+      "location": "Vila do Conde, Porto",
+      "summary": "Lidera o desenvolvimento das nossas fórmulas de betão imprimível.",
       "responsibilities": [
         "Formulação e caracterização de betões especiais",
         "Ensaios laboratoriais reológicos e mecânicos",
         "Colaboração com equipas de obra e I&D"
       ],
       "requirements": [
-        "Mestrado em Eng. Materiais / Civil / Química",
-        "Experiência com betões ou cimentícios (valorizado)"
+        "Mestrado em Eng. Materiais / Civil / Química (ou Estudante para Estágio de Verão)",
+        "Experiência com betões ou cimentícios (valorizado)",
+        "Disponibilidade entre Junho e Setembro (para Estágio de Verão)"
       ]
     },
     {
-      "id": "eng-mat-estagio",
-      "title": "Estágio Profissional — Eng. Materiais",
-      "area": "engenharia-materiais",
-      "type": "Estágio Profissional",
-      "location": "Vila Nova de Famalicão",
-      "summary": "Integra o laboratório de materiais em regime de estágio IEFP.",
-      "responsibilities": [
-        "Preparação de amassaduras e provetes",
-        "Ensaios de reologia e resistência",
-        "Registo e tratamento de dados"
-      ],
-      "requirements": [
-        "Recém-licenciado(a) ou mestre em Eng. Materiais",
-        "Elegibilidade para estágio IEFP"
-      ]
-    },
-    {
-      "id": "eng-mat-verao",
-      "title": "Estágio de Verão — Eng. Materiais",
-      "area": "engenharia-materiais",
-      "type": "Estágio de Verão",
-      "location": "Vila Nova de Famalicão",
-      "summary": "Formulação de betões inovadores durante o Verão.",
-      "responsibilities": [
-        "Trabalho prático em laboratório",
-        "Apoio a projetos de I&D em curso"
-      ],
-      "requirements": [
-        "Estudante de Eng. Materiais / Civil / Química",
-        "Disponibilidade entre Junho e Setembro"
-      ]
-    },
-    {
-      "id": "eng-civil-emprego",
+      "id": "eng-civil",
       "title": "Engenheiro(a) Civil",
       "area": "engenharia-civil",
-      "type": "Emprego",
-      "location": "Vila Nova de Famalicão",
+      "types": ["Emprego", "Estágio de Verão"],
+      "location": "Vila do Conde, Porto",
       "summary": "Coordena projetos de habitação impressa em 3D, do papel à obra.",
       "responsibilities": [
-        "Coordenação técnica de projetos habitacionais",
+        "Coordenação técnica e acompanhamento de obras de habitação 3D",
         "Interface com clientes, arquitetos e obra",
         "Garantia de qualidade e cumprimento de prazos"
       ],
       "requirements": [
-        "Mestrado em Engenharia Civil",
-        "Carta de condução",
-        "Experiência em obra (valorizada)"
+        "Mestrado ou Estudante (3º/4º/5º ano) em Engenharia Civil",
+        "Carta de condução (valorizada para emprego)",
+        "Disponibilidade entre Junho e Setembro (para Estágio de Verão)"
       ]
     },
     {
-      "id": "eng-civil-verao",
-      "title": "Estágio de Verão — Eng. Civil",
-      "area": "engenharia-civil",
-      "type": "Estágio de Verão",
-      "location": "Vila Nova de Famalicão",
-      "summary": "Vive um Verão em obras de habitação 3D reais.",
-      "responsibilities": [
-        "Acompanhamento de obra",
-        "Apoio à coordenação técnica"
-      ],
-      "requirements": [
-        "Estudante do 3º/4º/5º ano de Eng. Civil",
-        "Disponibilidade entre Junho e Setembro"
-      ]
-    },
-    {
-      "id": "arq-emprego",
+      "id": "arq",
       "title": "Arquiteto(a)",
       "area": "arquitetura",
-      "type": "Emprego",
-      "location": "Vila Nova de Famalicão",
+      "types": ["Emprego", "Estágio Curricular", "Estágio de Verão"],
+      "location": "Vila do Conde, Porto",
       "summary": "Desenha a próxima geração de habitações impressas em 3D.",
       "responsibilities": [
         "Desenvolvimento de projetos de arquitetura",
@@ -234,16 +152,16 @@ const STATIC_JOBS_DATA = {
         "Colaboração com engenharia e clientes"
       ],
       "requirements": [
-        "Mestrado em Arquitetura",
+        "Mestrado em Arquitetura (ou Estudante para Estágios)",
         "Domínio de Revit / Rhino / AutoCAD"
       ]
     },
     {
-      "id": "comercial-emprego",
+      "id": "comercial",
       "title": "Gestor(a) Comercial",
       "area": "comercial",
-      "type": "Emprego",
-      "location": "Vila Nova de Famalicão / Remoto híbrido",
+      "types": ["Emprego"],
+      "location": "Vila do Conde, Porto / Remoto híbrido",
       "summary": "Representa a Havelar junto de promotores, autarquias e clientes finais.",
       "responsibilities": [
         "Prospeção e gestão de leads",
@@ -257,11 +175,11 @@ const STATIC_JOBS_DATA = {
       ]
     },
     {
-      "id": "eng-info-emprego",
+      "id": "eng-info",
       "title": "Engenheiro(a) Informático(a)",
       "area": "engenharia-informatica",
-      "type": "Emprego",
-      "location": "Vila Nova de Famalicão / Híbrido",
+      "types": ["Emprego"],
+      "location": "Vila do Conde, Porto / Híbrido",
       "summary": "Desenvolve o software que faz mover as nossas impressoras.",
       "responsibilities": [
         "Desenvolvimento de software de controlo de máquinas",
