@@ -34,8 +34,8 @@ const STATIC_JOBS_DATA = {
     {
       "id": "engenharia-materiais",
       "name": "Engenharia de Materiais",
-      "short": "R&D betão",
-      "description": "Desenvolve novas fórmulas de betão para impressão aditiva neutra em carbono.",
+      "short": "R&D",
+      "description": "Desenvolve novas fórmulas para impressão aditiva neutra em carbono.",
       "icon": "🧪"
     },
     {
@@ -111,7 +111,7 @@ const STATIC_JOBS_DATA = {
       "area": "engenharia-materiais",
       "types": ["Emprego", "Estágio Curricular", "Estágio de Verão"],
       "location": "Vila do Conde, Porto",
-      "summary": "Desenvolve novas fórmulas de betão para impressão aditiva neutra em carbono.",
+      "summary": "Desenvolve novas fórmulas para impressão aditiva neutra em carbono.",
       "responsibilities": [
         "Formulação e caracterização de betões especiais",
         "Ensaios laboratoriais reológicos e mecânicos",
