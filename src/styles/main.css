@@ -20,9 +20,9 @@
 
   /* Gradients */
   --brand-gradient: linear-gradient(135deg, oklch(0.86 0.17 145), oklch(0.92 0.16 140));
-  --hero-gradient: radial-gradient(ellipse 80% 60% at 70% 30%, oklch(0.86 0.17 145 / 0.22), transparent 60%),
-                   radial-gradient(ellipse 60% 50% at 20% 80%, oklch(0.86 0.17 145 / 0.10), transparent 60%),
-                   linear-gradient(180deg, oklch(0.16 0.005 160), oklch(0.12 0.005 160));
+  --hero-gradient: radial-gradient(ellipse 80% 60% at 70% 30%, oklch(0.86 0.17 145 / 0.25), transparent 60%),
+                   radial-gradient(ellipse 60% 50% at 20% 80%, oklch(0.86 0.17 145 / 0.12), transparent 60%),
+                   linear-gradient(180deg, oklch(0.16 0.005 160 / 0.4), oklch(0.12 0.005 160 / 0.7));
   --glow-shadow: 0 20px 60px -20px oklch(0.86 0.17 145 / 0.45);
   --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 
@@ -59,8 +59,10 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   background-image:
-    radial-gradient(1200px 600px at 80% -10%, oklch(0.86 0.17 145 / 0.07), transparent 60%),
-    radial-gradient(1000px 500px at -10% 20%, oklch(0.86 0.17 145 / 0.04), transparent 60%);
+    linear-gradient(180deg, oklch(0.16 0.005 160 / 0.82), oklch(0.12 0.005 160 / 0.90)),
+    url('../assets/background-house-picture.jpeg');
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
 }
 
@@ -200,7 +202,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; line
 .footer__links a:hover { color: var(--foreground); }
 .footer__bottom {
   margin-top: 2.5rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 1.25rem 0;
   border-top: 1px solid oklch(0.30 0.01 160 / 0.4);
   text-align: center;
   font-size: 0.75rem;
@@ -292,22 +294,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; line
   align-items: center;
   overflow: hidden;
 }
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(to right, var(--background) 0%, oklch(0.16 0.005 160 / 0.85) 55%, oklch(0.16 0.005 160 / 0.35) 100%),
-    linear-gradient(to top, var(--background) 0%, transparent 50%, oklch(0.16 0.005 160 / 0.5) 100%),
-    var(--hero-gradient);
-}
 .hero__content {
   position: relative;
   z-index: 10;
@@ -334,12 +320,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; line
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1.02;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 .hero__desc {
   margin-top: 1.25rem;
   max-width: 38rem;
   font-size: 1.1rem;
-  color: var(--muted-foreground);
+  color: var(--foreground);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 .hero__actions {
   margin-top: 2rem;
@@ -373,9 +361,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; line
 .formats__grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
 }
-@media (min-width: 768px) { .formats__grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 640px) { .formats__grid { grid-template-columns: repeat(3, 1fr); } }
 .format-card { padding: 1.25rem; }
 .format-card__icon {
   width: 1.125rem;
@@ -847,4 +835,56 @@ select.form-control option { background-color: var(--card); color: var(--foregro
 @keyframes toast-in {
   from { transform: translateX(110%); opacity: 0; }
   to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* ─── Mobile Responsiveness & Side Padding Fixes ────────────────────────── */
+@media (max-width: 640px) {
+  .container,
+  .container-narrow {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero__content {
+    padding: 5rem 0 3.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__stats {
+    gap: 1.5rem;
+  }
+
+  .cta-banner {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .job-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .job-card__arrow {
+    align-self: flex-end;
+  }
+
+  .footer {
+    padding: 2.5rem 0 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container,
+  .container-narrow {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
